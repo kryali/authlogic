@@ -8,10 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Unreleased
 
 - Breaking Changes
-  - Dropped support for EOL Ruby versions (< 3.2)
-  - Dropped support for EOL Rails versions (< 7.2)
+  - [#782](https://github.com/binarylogic/authlogic/pull/782) - Drops support for EOL Ruby versions (< 3.2)
+  - [#782](https://github.com/binarylogic/authlogic/pull/782) - Drops support for EOL Rails versions (< 7.2)
 - Added
-  - Added support for Rails 8.1
+  - [#782](https://github.com/binarylogic/authlogic/pull/782) - Adds support for Rails 8.1
 - Fixed
   - None
 
