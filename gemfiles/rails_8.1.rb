@@ -3,8 +3,8 @@
 source "https://rubygems.org"
 gemspec path: ".."
 
-gem "activerecord", ">= 8.1.0.rc1", "< 8.2"
-gem "activesupport", ">= 8.1.0.rc1", "< 8.2"
+gem "activerecord", "~> 8.1.0"
+gem "activesupport", "~> 8.1.0"
 gem "mysql2", "~> 0.5.6"
 gem "pg", "~> 1.5.8"
 gem "sqlite3", "~> 2.1.0"
