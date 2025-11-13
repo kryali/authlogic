@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+- Breaking Changes
+  - [#782](https://github.com/binarylogic/authlogic/pull/782) - Drops support for EOL Ruby versions (< 3.2)
+  - [#782](https://github.com/binarylogic/authlogic/pull/782) - Drops support for EOL Rails versions (< 7.2)
+- Added
+  - [#782](https://github.com/binarylogic/authlogic/pull/782) - Adds support for Rails 8.1
+- Fixed
+  - None
+
 ## 6.5.0 (2025-04-10)
 
 - Breaking Changes
@@ -46,7 +54,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added
   - `Authlogic::Session::Base.session_fixation_defense` - Reset the Rack
     session ID after authentication, to protect against Session Fixation
-    attacks. (https://guides.rubyonrails.org/security.html#session-fixation)
+    attacks. (<https://guides.rubyonrails.org/security.html#session-fixation>)
     Default: true
 - Fixed
   - None
@@ -135,5 +143,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Previous major version
 
 See eg. the `5-1-stable` branch
-
-[1]: https://github.com/binarylogic/authlogic/blob/master/doc/use_normal_rails_validation.md

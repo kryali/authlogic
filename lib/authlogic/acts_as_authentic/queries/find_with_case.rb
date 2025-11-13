@@ -19,11 +19,6 @@ module Authlogic
       #
       # @api private
       class FindWithCase
-        # Dup ActiveRecord.gem_version before freezing, in case someone
-        # else wants to modify it. Freezing modifies an object in place.
-        # https://github.com/binarylogic/authlogic/pull/590
-        AR_GEM_VERSION = ::ActiveRecord.gem_version.dup.freeze
-
         # @api private
         def initialize(model_class, field, value, sensitive)
           @model_class = model_class
@@ -47,35 +42,17 @@ module Authlogic
 
         # @api private
         def insensitive_comparison
-          if AR_GEM_VERSION > Gem::Version.new("5.3")
-            @model_class.connection.case_insensitive_comparison(
-              @model_class.arel_table[@field], @value
-            )
-          else
-            @model_class.connection.case_insensitive_comparison(
-              @model_class.arel_table,
-              @field,
-              @model_class.columns_hash[@field],
-              @value
-            )
-          end
+          @model_class.connection.case_insensitive_comparison(
+            @model_class.arel_table[@field], @value
+          )
         end
 
         # @api private
         def sensitive_comparison
           bound_value = @model_class.predicate_builder.build_bind_attribute(@field, @value)
-          if AR_GEM_VERSION > Gem::Version.new("5.3")
-            @model_class.connection.case_sensitive_comparison(
-              @model_class.arel_table[@field], bound_value
-            )
-          else
-            @model_class.connection.case_sensitive_comparison(
-              @model_class.arel_table,
-              @field,
-              @model_class.columns_hash[@field],
-              bound_value
-            )
-          end
+          @model_class.connection.case_sensitive_comparison(
+            @model_class.arel_table[@field], bound_value
+          )
         end
       end
     end

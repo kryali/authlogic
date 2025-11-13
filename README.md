@@ -10,14 +10,15 @@ An unobtrusive ruby authentication library based on ActiveRecord.
 
 | Version    | Documentation                                                     |
 | ---------- | ----------------------------------------------------------------- |
-| Unreleased | https://github.com/binarylogic/authlogic/blob/master/README.md    |
-| 6.5.0      | https://github.com/binarylogic/authlogic/blob/v6.5.0/README.md    |
-| 6.4.3      | https://github.com/binarylogic/authlogic/blob/v6.4.3/README.md    |
-| 5.2.0      | https://github.com/binarylogic/authlogic/blob/v5.2.0/README.md    |
-| 4.5.0      | https://github.com/binarylogic/authlogic/blob/v4.5.0/README.md    |
-| 3.7.0      | https://github.com/binarylogic/authlogic/blob/v3.7.0/README.md    |
-| 2.1.11     | https://github.com/binarylogic/authlogic/blob/v2.1.11/README.rdoc |
-| 1.4.3      | https://github.com/binarylogic/authlogic/blob/v1.4.3/README.rdoc  |
+| Unreleased | <https://github.com/binarylogic/authlogic/blob/master/README.md>    |
+| 6.6.0      | <https://github.com/binarylogic/authlogic/blob/v6.6.0/README.md>    |
+| 6.5.0      | <https://github.com/binarylogic/authlogic/blob/v6.5.0/README.md>    |
+| 6.4.3      | <https://github.com/binarylogic/authlogic/blob/v6.4.3/README.md>    |
+| 5.2.0      | <https://github.com/binarylogic/authlogic/blob/v5.2.0/README.md>    |
+| 4.5.0      | <https://github.com/binarylogic/authlogic/blob/v4.5.0/README.md>    |
+| 3.7.0      | <https://github.com/binarylogic/authlogic/blob/v3.7.0/README.md>    |
+| 2.1.11     | <https://github.com/binarylogic/authlogic/blob/v2.1.11/README.rdoc> |
+| 1.4.3      | <https://github.com/binarylogic/authlogic/blob/v1.4.3/README.rdoc>  |
 
 ## Table of Contents
 
@@ -167,7 +168,7 @@ And run `bundle install`.
 
 ## 2. Rails
 
-Let's walk through a typical rails setup. ([Compatibility](#90-compatibility))
+Let's walk through a typical Rails setup. ([Compatibility](#90-compatibility))
 
 ### 2.a.1 The users table
 
@@ -383,9 +384,9 @@ Because Authlogic introduces its own methods for storing user sessions, the CSRF
 (Cross Site Request Forgery) protection that is built into Rails will not work
 out of the box.
 
-No generally applicable mitigation by the authlogic library is possible, because
+No generally applicable mitigation by the Authlogic library is possible, because
 the instance variable you use to store a reference to the user session in `def
-current_user_session` will not be known to authlogic.
+current_user_session` will not be known to Authlogic.
 
 You will need to override `ActionController::Base#handle_unverified_request` to
 do something appropriate to how your app handles user sessions, e.g.:
@@ -415,7 +416,7 @@ Up until recently, the standard default value when SameSite was not explicitly d
 
 Authlogic can allow you to explicitly set the value of SameSite to one of: Lax, Strict, or None. Note that when setting SameSite to None, the `secure` flag must also be set (secure is the default in Authlogic).
 
-Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#SameSite
+Reference: <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#SameSite>
 
 ## 3. Testing
 
@@ -423,25 +424,25 @@ See [Authlogic::TestCase](https://github.com/binarylogic/authlogic/blob/master/l
 
 ## 4. Helpful links
 
-- <b>API Reference:</b> http://www.rubydoc.info/github/binarylogic/authlogic
-- <b>Repository:</b> https://github.com/binarylogic/authlogic/tree/master
-- <b>Railscasts Screencast:</b> http://railscasts.com/episodes/160-authlogic
-- <b>Example repository with tutorial in README:</b> https://github.com/binarylogic/authlogic_example/tree/master
-- <b>Tutorial</b>: Rails Authentication with Authlogic https://www.sitepoint.com/rails-authentication-with-authlogic
-- <b>Issues:</b> https://github.com/binarylogic/authlogic/issues
-- <b>Chrome is not logging out on browser close</b> https://productforums.google.com/forum/#!topic/chrome/9l-gKYIUg50/discussion
+- <b>API Reference:</b> <http://www.rubydoc.info/github/binarylogic/authlogic>
+- <b>Repository:</b> <https://github.com/binarylogic/authlogic/tree/master>
+- <b>Railscasts Screencast:</b> <http://railscasts.com/episodes/160-authlogic>
+- <b>Example repository with tutorial in README:</b> <https://github.com/binarylogic/authlogic_example/tree/master>
+- <b>Tutorial</b>: Rails Authentication with Authlogic <https://www.sitepoint.com/rails-authentication-with-authlogic>
+- <b>Issues:</b> <https://github.com/binarylogic/authlogic/issues>
+- <b>Chrome is not logging out on browser close</b> <https://productforums.google.com/forum/#!topic/chrome/9l-gKYIUg50/discussion>
 
 ## 5. Add-ons
 
-- <b>Authlogic OpenID addon:</b> https://github.com/binarylogic/authlogic_openid
-- <b>Authlogic LDAP addon:</b> https://github.com/binarylogic/authlogic_ldap
-- <b>Authlogic Facebook Connect:</b> https://github.com/kalasjocke/authlogic-facebook-connect
-- <b>Authlogic Facebook Connect (New JS API):</b> https://github.com/studybyte/authlogic_facebook_connect
-- <b>Authlogic Facebook Shim</b> https://github.com/james2m/authlogic_facebook_shim
-- <b>Authlogic OAuth (Twitter):</b> https://github.com/jrallison/authlogic_oauth
-- <b>Authlogic Oauth and OpenID:</b> https://github.com/lancejpollard/authlogic-connect
-- <b>Authlogic PAM:</b> https://github.com/nbudin/authlogic_pam
-- <b>Authlogic x509:</b> https://github.com/auth-scc/authlogic_x509
+- <b>Authlogic OpenID addon:</b> <https://github.com/binarylogic/authlogic_openid>
+- <b>Authlogic LDAP addon:</b> <https://github.com/binarylogic/authlogic_ldap>
+- <b>Authlogic Facebook Connect:</b> <https://github.com/kalasjocke/authlogic-facebook-connect>
+- <b>Authlogic Facebook Connect (New JS API):</b> <https://github.com/studybyte/authlogic_facebook_connect>
+- <b>Authlogic Facebook Shim</b> <https://github.com/james2m/authlogic_facebook_shim>
+- <b>Authlogic OAuth (Twitter):</b> <https://github.com/jrallison/authlogic_oauth>
+- <b>Authlogic Oauth and OpenID:</b> <https://github.com/lancejpollard/authlogic-connect>
+- <b>Authlogic PAM:</b> <https://github.com/nbudin/authlogic_pam>
+- <b>Authlogic x509:</b> <https://github.com/auth-scc/authlogic_x509>
 
 If you create one of your own, please let us know about it so we can add it to
 this list. Or just fork the project, add your link, and send us a pull request.
@@ -491,7 +492,8 @@ in `authlogic/session/base.rb`.
 
 | Version | branch     | ruby     | activerecord  |
 | ------- | ---------- | -------- | ------------- |
-| 6.5.0   | 6-5-stable | >= 2.4.0 | >= 5.2, < 8.0 |
+| 6.6.0   | 6-6-stable | >= 3.2.0 | >= 7.2, < 8.2 |
+| 6.5.0   | 6-5-stable | >= 2.4.0 | >= 5.2, < 8.1 |
 | 6.4.3   | 6-4-stable | >= 2.4.0 | >= 5.2, < 7.1 |
 | 5.2     | 5-2-stable | >= 2.3.0 | >= 5.2, < 6.1 |
 | 4.5     | 4-5-stable | >= 2.3.0 | >= 4.2, < 5.3 |
@@ -507,8 +509,8 @@ Under SemVer, [changes to dependencies][10] do not require a major release.
 
 Copyright (c) 2012 Ben Johnson of Binary Logic, released under the MIT license
 
-[1]: https://api.travis-ci.org/binarylogic/authlogic.svg?branch=master
-[2]: https://travis-ci.org/binarylogic/authlogic
+[1]: https://github.com/binarylogic/authlogic/actions/workflows/test.yml/badge.svg?branch=master
+[2]: https://github.com/binarylogic/authlogic/actions/workflows/test.yml
 [3]: https://gemnasium.com/badges/github.com/binarylogic/authlogic.svg
 [4]: https://gemnasium.com/binarylogic/authlogic
 [5]: https://badge.fury.io/rb/authlogic.svg

@@ -54,19 +54,12 @@ logger = Logger.new(STDOUT)
 logger.level = Logger::FATAL
 ActiveRecord::Base.logger = logger
 
-if ActiveRecord::VERSION::STRING < "4.1"
-  ActiveRecord::Base.configurations = true
-end
-
 if ActiveSupport.respond_to?(:test_order)
   ActiveSupport.test_order = :sorted
 end
 
-if ActiveRecord::VERSION::STRING < "7.1"
-  ActiveRecord::Base.default_timezone = :local
-else
-  ActiveRecord.default_timezone = :local
-end
+ActiveRecord.default_timezone = :local
+
 ActiveRecord::Schema.define(version: 1) do
   create_table :companies do |t|
     t.datetime  :created_at, limit: 6
@@ -184,14 +177,7 @@ module ActiveSupport
   class TestCase
     include ActiveRecord::TestFixtures
 
-    # `fixture_path=` was deprecated in favor of
-    # `fixture_paths=` in Rails 7.1, removed in Rails 7.2.
-    if respond_to?(:fixture_paths=)
-      self.fixture_paths = [File.dirname(__FILE__) + "/fixtures"]
-    else
-      self.fixture_path = File.dirname(__FILE__) + "/fixtures"
-    end
-
+    self.fixture_paths = [File.dirname(__FILE__) + "/fixtures"]
     self.use_transactional_tests = false
     self.use_instantiated_fixtures = false
     self.pre_loaded_fixtures = false
