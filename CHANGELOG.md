@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## 6.6.0 (2025-11-14)
+
 - Breaking Changes
   - [#782](https://github.com/binarylogic/authlogic/pull/782) - Drops support for EOL Ruby versions (< 3.2)
   - [#782](https://github.com/binarylogic/authlogic/pull/782) - Drops support for EOL Rails versions (< 7.2)
