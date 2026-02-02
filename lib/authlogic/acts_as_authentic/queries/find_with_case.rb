@@ -42,17 +42,21 @@ module Authlogic
 
         # @api private
         def insensitive_comparison
-          @model_class.connection.case_insensitive_comparison(
-            @model_class.arel_table[@field], @value
-          )
+          @model_class.with_connection do |connection|
+            connection.case_insensitive_comparison(
+              @model_class.arel_table[@field], @value
+            )
+          end
         end
 
         # @api private
         def sensitive_comparison
           bound_value = @model_class.predicate_builder.build_bind_attribute(@field, @value)
-          @model_class.connection.case_sensitive_comparison(
-            @model_class.arel_table[@field], bound_value
-          )
+          @model_class.with_connection do |connection|
+            connection.case_sensitive_comparison(
+              @model_class.arel_table[@field], bound_value
+            )
+          end
         end
       end
     end
