@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## 6.6.1 (2026-02-09)
+
+- Breaking Changes
+- Added
+- Fixed
+  - [#783](https://github.com/binarylogic/authlogic/pull/783) - Replace deprecated ActiveRecord::Base.connection via with_connection
+
 ## 6.6.0 (2025-11-14)
 
 - Breaking Changes
